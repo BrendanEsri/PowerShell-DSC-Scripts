@@ -11,7 +11,7 @@ $localServer = @('localserver')   # The machine running the script
 $remoteServers = @('remoteserver1','remoteserver2') # Remote targets
 
 # Drive letter and file path setup
-$localDrive = "C:" # Define the drive letter as a variable (no trailing slash or $)
+$localDrive = "D:" # Define the drive letter as a variable (no trailing slash or $)
 $remoteDrive = "D:" # Define the drive letter as a variable (no trailing slash or $)
 $mainDirectory = "Automation"  # Change this to the directory that contains the folder that contains the licenses folder
 $subDirectory = "Licenses" # Change this to the directory that contains the licenses
