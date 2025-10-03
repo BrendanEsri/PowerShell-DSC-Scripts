@@ -5,10 +5,10 @@
 
 
 # List of servers
-$arcgisservers = @("Server1", "Server2", "Server3")
+$servers = @("Server1", "Server2", "Server3")
 
 # Loop through each server
-foreach ($server in $arcgisservers) {
+foreach ($server in $servers) {
     try {
         # Enter the PSSession
         Enter-PSSession -ComputerName $server -ErrorAction Stop
