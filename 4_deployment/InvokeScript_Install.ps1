@@ -7,6 +7,6 @@ Set-Location -Path "E:\Logs"
 
 Invoke-ArcGISConfiguration -ConfigurationParametersFile "D:\EsriInstall\DSC\BaseEnterpriseDeployment.json" -Mode InstallLicenseConfigure -DebugSwitch
 
-# if successful, run without -DebugSwitch to turn off Debug Mode on ArcGIS Components
+# if successful,  run without -DebugSwitch to turn off Debug Mode on ArcGIS Components
 # Invoke-ArcGISConfiguration -ConfigurationParametersFile "D:\EsriInstall\DSC\BaseEnterpriseDeployment.json" -Mode InstallLicenseConfigure
 
