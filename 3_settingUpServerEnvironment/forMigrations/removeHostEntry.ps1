@@ -7,7 +7,7 @@ $machineName = "machine.domain.com" # Name of the machine whose IP address is be
 $dnsName = "gis.website.gov" # DNS name to map to the IP address
  
 # List of target machine names/IP addresses
-$targetMachines = @("machine1", "machine2", "machine3")
+$remoteServers = @("machine1", "machine2", "machine3")
 
 # Get the local machine name
 $localMachine = $env:COMPUTERNAME
@@ -38,8 +38,8 @@ function Remove-HostEntry {
 }
 
 # Loop through each target machine
-foreach ($machine in $targetMachines) {
-    if ($machine -eq $localMachine) {
+foreach ($server in $remoteServers) {
+    if ($server -eq $localMachine) {
         # If the target machine is the local machine, modify the hosts file directly
         $hostsPath = "C:\Windows\System32\drivers\etc\hosts"
         Remove-HostEntry -hostsPath $hostsPath -ipAddress $ipAddress -machineName $machineName -dnsName $dnsName
@@ -53,7 +53,7 @@ foreach ($machine in $targetMachines) {
         }
     } else {
         # Use Invoke-Command for remote execution on other machines
-        Invoke-Command -ComputerName $machine -ScriptBlock {
+        Invoke-Command -ComputerName $server -ScriptBlock {
             param($ipAddress, $dnsName, $machineName, $desiredIpAddress)
             
             # Path to the hosts file

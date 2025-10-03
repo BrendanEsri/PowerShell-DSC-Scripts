@@ -6,7 +6,7 @@
 
 # Do not include the machine that has the arcgis module on it inside of the @arcgisservers block or it will remove your arcgis module
  
-$arcgisservers = @('machine1','machine2')
+$remoteServers = @('machine1','machine2')
 
 $ScriptBlock = {
     param ($server)
@@ -26,7 +26,7 @@ $ScriptBlock = {
 }
 
 $jobs = @()
-foreach ($server in $arcgisservers) {
+foreach ($server in $remoteServers) {
     $job = Start-Job -ScriptBlock $ScriptBlock -ArgumentList $server
     $jobs += $job
 }

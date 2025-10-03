@@ -1,7 +1,7 @@
 # Variables
 $username = "dmzUser"
 # List of target machines
-$computers = @("Machine1", "Machine2", "Machine3")
+$remoteServers = @("Machine1", "Machine2", "Machine3")
 
 # Script block to execute on each machine
 $scriptBlock = {
@@ -29,6 +29,6 @@ $scriptBlock = {
 }
 
 # Execute the script block on each target machine
-foreach ($computer in $computers) {
-    Invoke-Command -ComputerName $computer -ScriptBlock $scriptBlock -ArgumentList $username
+foreach ($server in $remoteServers) {
+    Invoke-Command -ComputerName $server -ScriptBlock $scriptBlock -ArgumentList $username
 }

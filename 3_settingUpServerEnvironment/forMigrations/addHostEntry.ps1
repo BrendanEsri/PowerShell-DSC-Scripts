@@ -6,12 +6,12 @@ $machineName = "machine1" # Name of the machine whose IP address is being mapped
 $dnsName = "host.domain.com" # DNS name to map to the IP address
 
 # List of target machine names to modify the hosts file
-$targetMachines = @("machine1", "machine2", "machine3", "machine4")
+$remoteServers = @("machine1", "machine2", "machine3", "machine4")
 
 # Loop through each target machine
-foreach ($machine in $targetMachines) {
+foreach ($server in $remoteServers) {
     # Use Invoke-Command for remote execution
-    Invoke-Command -ComputerName $machine -ScriptBlock {
+    Invoke-Command -ComputerName $server -ScriptBlock {
         param($ipAddress, $dnsName, $machineName)
 
         # Path to the hosts file

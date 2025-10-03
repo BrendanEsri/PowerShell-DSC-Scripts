@@ -3,9 +3,9 @@
 # change the machine1, machine2 with your machines
 # This script sets the Local DSC configuration to Stop on Restart and to ApplyOnly so logs don't pile up and so it won't run again on restart 
 
-$arcgisservers = @('machine1','machine2')
+$remoteServers = @('machine1','machine2')
 
-foreach ($server in $arcgisservers) {
+foreach ($server in $remoteServers) {
     Write-Host "Connecting to $server";
     $session = New-PSSession -ComputerName $server;
     Invoke-Command -Session $session -ScriptBlock {
