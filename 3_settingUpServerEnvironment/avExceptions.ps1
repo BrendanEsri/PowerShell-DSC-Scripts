@@ -1,5 +1,5 @@
 # List of target machines
-$computers = @("Machine1", "Machine2", "Machine3")
+$remoteServers = @("Machine1", "Machine2", "Machine3")
 
 # Define the list of folders to exclude
 $foldersToExclude = @(
@@ -23,6 +23,6 @@ $scriptBlock = {
 }
 
 # Execute the script block on each target machine
-foreach ($computer in $computers) {
-    Invoke-Command -ComputerName $computer -ScriptBlock $scriptBlock -ArgumentList $foldersToExclude
+foreach ($server in $remoteServers) {
+    Invoke-Command -ComputerName $server -ScriptBlock $scriptBlock -ArgumentList $foldersToExclude
 }

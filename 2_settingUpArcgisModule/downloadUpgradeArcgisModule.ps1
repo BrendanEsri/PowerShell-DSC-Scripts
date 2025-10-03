@@ -4,10 +4,10 @@
 
 # change the machine1, machine2 with your machines
 
-$arcgisservers = ("machine1","machine2")
+$remoteServers = ("machine1","machine2")
 
 # Start a new job for each server
-$jobs = $arcgisservers | ForEach-Object {
+$jobs = $remoteServers | ForEach-Object {
     $server = $_
     Start-Job -ScriptBlock {
         param($server)

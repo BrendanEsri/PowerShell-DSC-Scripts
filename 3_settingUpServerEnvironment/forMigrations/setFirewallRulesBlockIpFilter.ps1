@@ -1,6 +1,6 @@
 # This script creates a new firewall rule to block inbound traffic from multiple IP addresses on multiple machines.
 
-$arcgisservers = @('machine1','machine2','machine3')  # List of machines to run the script on
+$remoteServers = @('machine1','machine2','machine3')  # List of machines to run the script on
 $blockIPs = '192.168.1.1,10.0.0.1,172.16.0.1'  # List of IP addresses to block as a comma-separated string
 $environment = "Target Non-Production"  # Name of the environment to block traffic from
 
@@ -8,7 +8,7 @@ $environment = "Target Non-Production"  # Name of the environment to block traff
 $blockIPsArray = $blockIPs -split ','
 
 $parameters = @{
-    ComputerName = $arcgisservers
+    ComputerName = $remoteServers
     ScriptBlock = {
         param($blockIPsArray, $environment)  # Accepts the block IPs array and environment as parameters
 
