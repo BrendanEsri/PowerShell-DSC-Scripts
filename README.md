@@ -1,3 +1,16 @@
+> ⚠️ **This repository is deprecated! Please visit our new repo:** [Esri PS PowerShell DSC Helper Scripts](https://github.com/EsriPS/PowerShell-DSC-HelperScripts)
+
+
+
+
+
+
+
+
+
+
+
+
 # ArcGIS PowerShell DSC Helper Scripts
 
 A series of helper scripts have been developed to assist with both setting up and configuring the PowerShell DSC environment, as well as making the ArcGIS deployment more standardized and seamless. Below is a brief description of some of them:
